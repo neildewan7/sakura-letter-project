@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Letter for [HER NAME]</title>
+    <meta
+      name="description"
+      content="A romantic interactive one-page love letter with memories and gentle animations."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background-glow" aria-hidden="true"></div>
+    <div class="floating-hearts" aria-hidden="true">
+      <span>❤</span><span>✦</span><span>❤</span><span>✦</span><span>❤</span>
+    </div>
+
+    <button id="music-toggle" class="music-toggle" aria-pressed="false" aria-label="Toggle background music">
+      ♫ Music
+    </button>
+    <audio id="bg-music" loop preload="none">
+      <!-- Replace with your own track -->
+      <source src="media/your-song.mp3" type="audio/mpeg" />
+    </audio>
+
+    <header class="hero" id="top">
+      <h1 class="visually-hidden">A private love letter for [HER NAME]</h1>
+
+      <button id="envelope" class="envelope" aria-expanded="false" aria-controls="letter-content">
+        <span class="envelope__to">For [HER NAME]</span>
+        <span class="wax-seal">❦</span>
+        <span class="envelope__hint">Tap to open</span>
+        <span class="envelope__flap" aria-hidden="true"></span>
+      </button>
+
+      <article id="letter-content" class="letter" aria-hidden="true">
+        <h2>My Dearest [HER NAME],</h2>
+        <p>[LETTER TEXT]</p>
+        <p>
+          Every page of this little letter holds a memory, a smile, a soft moment,
+          and all the things I still want to share with you.
+        </p>
+        <p class="signature">Love, [YOUR NAME]</p>
+      </article>
+    </header>
+
+    <main>
+      <section class="memory-intro reveal">
+        <p class="section-kicker">Our Story</p>
+        <h2>Moments I Keep Replaying</h2>
+        <p>
+          Scroll slowly — each memory appears like a tucked-away photo in a scrapbook.
+        </p>
+      </section>
+
+      <section class="gallery scrapbook">
+        <article class="polaroid reveal slide-left">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=800&q=80" alt="Placeholder for [PHOTO 1]" />
+          <p>[CAPTION 1]</p>
+        </article>
+        <article class="polaroid reveal zoom-in">
+          <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80" alt="Placeholder for [PHOTO 2]" />
+          <p>[CAPTION 2]</p>
+        </article>
+        <article class="polaroid reveal slide-right">
+          <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=800&q=80" alt="Placeholder for [PHOTO 3]" />
+          <p>[CAPTION 3]</p>
+        </article>
+      </section>
+
+      <section class="timeline">
+        <h2 class="reveal">Our Little Timeline</h2>
+        <div class="timeline__items">
+          <article class="timeline__item reveal slide-left">
+            <h3>The day we met</h3>
+            <p>[Write your memory here]</p>
+          </article>
+          <article class="timeline__item reveal">
+            <h3>Our favorite memory</h3>
+            <p>[Write your memory here]</p>
+          </article>
+          <article class="timeline__item reveal slide-right">
+            <h3>What I love about you</h3>
+            <p>[Write your memory here]</p>
+          </article>
+          <article class="timeline__item reveal zoom-in">
+            <h3>What I’m looking forward to</h3>
+            <p>[Write your memory here]</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing reveal" id="closing">
+        <p class="closing__line">And if I had to choose all over again, I’d still choose you.</p>
+        <p class="signature">Love always, [YOUR NAME]</p>
+        <a class="back-to-top" href="#top">Back to the envelope ↑</a>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
