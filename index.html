@@ -37,10 +37,18 @@
       <h1 class="visually-hidden">A private love letter for [HER NAME]</h1>
 
       <button id="envelope" class="envelope" aria-expanded="false" aria-controls="letter-content">
-        <span class="envelope__to">For [HER NAME]</span>
-        <span class="envelope__seal">❦</span>
-        <span class="envelope__hint">Open letter</span>
-        <span class="envelope__flap" aria-hidden="true"></span>
+        <span class="envelope__inner">
+          <span class="envelope__face envelope__face--front">
+            <span class="envelope__to">For [HER NAME]</span>
+            <span class="envelope__seal">❦</span>
+            <span class="envelope__hint">Open letter</span>
+          </span>
+
+          <span class="envelope__face envelope__face--back">
+            <span class="envelope__flap" aria-hidden="true"></span>
+            <span class="envelope__liner" aria-hidden="true"></span>
+          </span>
+        </span>
       </button>
 
       <article id="letter-content" class="letter" aria-hidden="true">
