@@ -297,7 +297,7 @@ h4 {
 .letter.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-  max-height: 780px;
+  max-height: var(--letter-open-height, 2400px);
 }
 
 .letter__edge {

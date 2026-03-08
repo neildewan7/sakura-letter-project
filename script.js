@@ -9,6 +9,12 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 
 let envelopeStage = 0;
 
+const updateLetterHeight = () => {
+  if (!letter) return;
+  const contentHeight = Math.ceil(letter.scrollHeight + 36);
+  letter.style.setProperty('--letter-open-height', `${contentHeight}px`);
+};
+
 const memoryCards = [
   {
     image: 'LDRselfie.png',
@@ -105,13 +111,27 @@ envelope?.addEventListener('click', () => {
     if (hint) hint.textContent = 'Letter opened';
 
     window.setTimeout(() => {
+      updateLetterHeight();
       letter?.classList.add('is-visible');
       letter?.setAttribute('aria-hidden', 'false');
+      window.setTimeout(updateLetterHeight, 250);
     }, 540);
 
     window.setTimeout(() => {
       letter?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }, 860);
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (letter?.classList.contains('is-visible')) {
+    updateLetterHeight();
+  }
+});
+
+window.addEventListener('orientationchange', () => {
+  if (letter?.classList.contains('is-visible')) {
+    window.setTimeout(updateLetterHeight, 180);
   }
 });
 
