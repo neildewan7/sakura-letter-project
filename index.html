@@ -3,152 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Letter for [HER NAME]</title>
+    <title>Love Letter for tookie</title>
     <meta
       name="description"
-      content="An elegant interactive one-page love letter with cinematic reveals and scrapbook memories."
+      content="An art-directed interactive love letter with elegant motion and keepsake memories."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Allura&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600&family=Petit+Formal+Script&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="backdrop" aria-hidden="true"></div>
-    <div class="paper-grain" aria-hidden="true"></div>
+    <div class="page-shell" id="top">
+      <div class="scene" aria-hidden="true">
+        <div class="scene__orb scene__orb--one" data-parallax="0.12"></div>
+        <div class="scene__orb scene__orb--two" data-parallax="0.18"></div>
+        <div class="scene__veil" data-parallax="0.08"></div>
+      </div>
 
-    <button
-      id="music-toggle"
-      class="music-toggle"
-      aria-pressed="false"
-      aria-label="Toggle background music"
-    >
-      <span>♫</span> Music
-    </button>
-    <audio id="bg-music" loop preload="none">
-      <source src="media/your-song.mp3" type="audio/mpeg" />
-    </audio>
-
-    <header class="hero" id="top">
-      <p class="hero__eyebrow">A private letter</p>
-      <h1 class="visually-hidden">A private love letter for [HER NAME]</h1>
-
-      <button id="envelope" class="envelope" aria-expanded="false" aria-controls="letter-content">
-        <span class="envelope__to">For [HER NAME]</span>
-        <span class="envelope__seal">❦</span>
-        <span class="envelope__hint">Open letter</span>
-        <span class="envelope__flap" aria-hidden="true"></span>
-      </button>
-
-      <article id="letter-content" class="letter" aria-hidden="true">
-        <div class="letter__edge" aria-hidden="true"></div>
-        <h2>My Dearest [HER NAME],</h2>
-        <p>[LETTER TEXT]</p>
-        <p>
-          This is where I keep the quiet things: the details I notice, the gratitude I carry,
-          and the little moments that changed everything for me.
+      <header class="hero">
+        <p class="hero__eyebrow"></p>
+        <h1>A Letter for my tookie</h1>
+        <p class="hero__subhead">
+          I hope you enjoy this project! It's a bit of a work in progress.
         </p>
-        <p class="signature">Forever, [YOUR NAME]</p>
-      </article>
-    </header>
 
-    <main>
-      <section class="memory-intro reveal" data-parallax="0.06">
-        <p class="section-kicker">Our Story</p>
-        <h2>Memories pressed between pages</h2>
-        <p>
-          Tap a memory card to flip it and reveal the note on the back.
-        </p>
-      </section>
-
-      <section class="memory-grid">
-        <article class="memory-card reveal slide-left" data-parallax="0.1">
-          <button class="flip-card" type="button" aria-label="Flip memory card 1">
-            <span class="flip-card__inner">
-              <span class="flip-card__face flip-card__front">
-                <img
-                  src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80"
-                  alt="Placeholder for [PHOTO 1]"
-                />
-                <span class="flip-card__caption">[CAPTION 1]</span>
+        <div class="hero__envelope-wrap reveal">
+          <button id="envelope" class="envelope" aria-controls="letter-content" aria-expanded="false">
+            <span class="envelope__inner">
+              <span class="envelope__face envelope__face--front">
+                <span class="envelope__to">For my tookie</span>
+                <span class="envelope__hint" id="envelope-hint">Turn envelope</span>
               </span>
-              <span class="flip-card__face flip-card__back">
-                <span class="flip-card__note-title">[PHOTO 1 NOTE]</span>
-                <span>[Short love note / memory for this photo]</span>
+              <span class="envelope__face envelope__face--back">
+                <span class="envelope__liner"></span>
+                <span class="envelope__flap"></span>
+                <span class="envelope__seal">❦</span>
+                <span class="envelope__hint envelope__hint--back">Click seal to break</span>
               </span>
             </span>
           </button>
-        </article>
-
-        <article class="memory-card reveal zoom-in" data-parallax="0.12">
-          <button class="flip-card" type="button" aria-label="Flip memory card 2">
-            <span class="flip-card__inner">
-              <span class="flip-card__face flip-card__front">
-                <img
-                  src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80"
-                  alt="Placeholder for [PHOTO 2]"
-                />
-                <span class="flip-card__caption">[CAPTION 2]</span>
-              </span>
-              <span class="flip-card__face flip-card__back">
-                <span class="flip-card__note-title">[PHOTO 2 NOTE]</span>
-                <span>[Short love note / memory for this photo]</span>
-              </span>
-            </span>
-          </button>
-        </article>
-
-        <article class="memory-card reveal slide-right" data-parallax="0.08">
-          <button class="flip-card" type="button" aria-label="Flip memory card 3">
-            <span class="flip-card__inner">
-              <span class="flip-card__face flip-card__front">
-                <img
-                  src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=900&q=80"
-                  alt="Placeholder for [PHOTO 3]"
-                />
-                <span class="flip-card__caption">[CAPTION 3]</span>
-              </span>
-              <span class="flip-card__face flip-card__back">
-                <span class="flip-card__note-title">[PHOTO 3 NOTE]</span>
-                <span>[Short love note / memory for this photo]</span>
-              </span>
-            </span>
-          </button>
-        </article>
-      </section>
-
-      <section class="timeline">
-        <h2 class="reveal">A timeline of us</h2>
-        <div class="timeline__track" aria-hidden="true"></div>
-        <div class="timeline__items">
-          <article class="timeline__item reveal slide-left" data-parallax="0.05">
-            <h3>The day we met</h3>
-            <p>[Write your memory here]</p>
-          </article>
-          <article class="timeline__item reveal" data-parallax="0.07">
-            <h3>Our favorite memory</h3>
-            <p>[Write your memory here]</p>
-          </article>
-          <article class="timeline__item reveal slide-right" data-parallax="0.04">
-            <h3>What I love about you</h3>
-            <p>[Write your memory here]</p>
-          </article>
-          <article class="timeline__item reveal zoom-in" data-parallax="0.06">
-            <h3>What I’m looking forward to</h3>
-            <p>[Write your memory here]</p>
-          </article>
         </div>
-      </section>
 
-      <section class="closing reveal" id="closing" data-parallax="0.03">
-        <p class="closing__line">If I could send one letter to every version of us, it would still end here.</p>
-        <p class="signature">Love always, [YOUR NAME]</p>
-        <a class="back-to-top" href="#top">Back to the envelope ↑</a>
-      </section>
-    </main>
+        <article id="letter-content" class="letter" aria-hidden="true">
+          <div class="letter__edge"></div>
+          <h2>Dear Ookie,</h2>
+          <p>
+            OMGGG HAPPY 15 MONTHS!!!!!! WOW we're basically at 2 years! I love my tookie so much,
+            and I miss you sosossosososososo much. Everyday, I think about how spoiled I was 
+            last year. I always replay the moment I would come back from class and my tookie
+            would be waiting for me on my bed with HayDay open and when I opened the door I 
+            would see your beautiful smile and I just could not help myself but jump onto the bed.          
+          </p>
+          <p>
+            I hope life in Japan will be as fun as that was! I can't wait to pick you up at the station
+            or go visit you at work and go home with you ! I need to get skinny before I go
+            so I can fit every sweet treat in hahahahah. I hope you're having an amazing winter quarter. 
+            We've been so busy that it felt soooo fast. I feel like I haven't been able to fully appreciate
+            and give a full day to my tookie :( I can't wait to hang out with my best friend everyday again
+            and make silly faces and toot together. I also can't wait to try your new matcha. I know you've
+            been grinding on your latte skils so my expectations are ery high hehehee. I miss seeing your
+            face when you turn around when we're puzzled:( Or when we watch a scary movie and I forget how 
+            beautiful my tookies face looks and I feel so relieved when you turn around.
+            I actually cannot wait to just eat my meals with you and then get freaky after and then take a nap 
+            with you.
+          </p>
+          <p>
+            Anyways tookie, I hope you enjoy the rest of this digital letter since my letters take forever to 
+            reach you hahahaah.
+            I need to teach you how to vibe code so that you can make your own websites like this too because
+            it's pretty easy. I love you sooooo much my badookie ookster. 
+          </p>
+          <p class="signature">Love, tooky</p>
+        </article>
+      </header>
+
+      <main class="content">
+        <section class="section section--memories reveal" id="memories">
+          <p class="section__kicker">Up next!</p>
+          <h3>Pics that make me happy (: (click each pic to flip) </h3>
+          <div id="memory-grid" class="memory-grid stagger-group" aria-live="polite"></div>
+        </section>
+
+        <section class="section section--timeline reveal" id="timeline">
+          <p class="section__kicker">Last but not least</p>
+          <h3>Things I'm looking forward to.</h3>
+          <div class="timeline-grid stagger-group">
+            <article class="timeline-card stagger-item">
+              <p class="timeline-card__index">01</p>
+              <h4>PUZZLING WITH YOU EVERYDAY! (OBV)</h4>
+              <p>I CAN'T WAIT YIPEEEE. GONNA GET FREAKY EVERYDAY HEHEHEHEHEH</p>
+            </article>
+            <article class="timeline-card stagger-item">
+              <p class="timeline-card__index">02</p>
+              <h4>GOING OUT TO GET DRINKS WITH YOU</h4>
+              <p>I realllly wanna go to a jazz bar with you and get tipsy and walk around with my ookie.</p>
+            </article>
+            <article class="timeline-card stagger-item">
+              <p class="timeline-card__index">03</p>
+              <h4>HANGING OUT WITH THE DOGGEIS</h4>
+              <p>I miss waking up early and walking the doggies with you and hanging out with them.</p>
+            </article>
+            <article class="timeline-card stagger-item">
+              <p class="timeline-card__index">04</p>
+              <h4>TRAVELING WITH TOOKIE</h4>
+              <p>No matter where we go, I can't wait to see new places and try new things with you (:</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--closing reveal" id="closing">
+          <p class="closing__line">
+            I hope you enjoyed your website hehe. I will be making some updates and making it better so 
+            feedback will much appreciated. 
+          </p>
+          <p class="signature">Love you always, tooky</p>
+          <a href="#top" class="back-top">Back to envelope</a>
+        </section>
+      </main>
+    </div>
 
     <script src="script.js"></script>
   </body>
